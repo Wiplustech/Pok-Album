@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PokéAlbum</title>
+  <title>PokéÁlbum - Álbum de Figurinhas</title>
   
-  <!-- Tailwind CSS para Estilização Premium e Responsiva -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -37,11 +35,9 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen pb-16">
 
-  <!-- HEADER -->
   <header class="bg-red-600 text-white shadow-md sticky top-0 z-30">
     <div class="w-full max-w-[1800px] mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
-        <!-- Ícone Pokébola -->
         <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center relative border-4 border-slate-800">
           <div class="w-full h-[2px] bg-slate-800 absolute top-1/2 -translate-y-1/2"></div>
           <div class="w-4 h-4 bg-white border-2 border-slate-800 rounded-full z-10"></div>
@@ -66,7 +62,6 @@
       </div>
     </div>
 
-    <!-- NAVEGAÇÃO -->
     <nav class="w-full max-w-[1800px] mx-auto px-6 lg:px-12 flex overflow-x-auto whitespace-nowrap">
       <button onclick="switchTab('album')" id="tab-album" class="py-4 px-8 font-bold border-b-4 border-white text-white text-lg transition-all cursor-pointer">
         Meu Álbum
@@ -80,32 +75,26 @@
     </nav>
   </header>
 
-  <!-- POPUP / TOAST -->
   <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white px-8 py-4 rounded-full shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none text-base font-bold">
     Mensagem aqui!
   </div>
 
-  <!-- LOADING SPINNER -->
   <div id="loading-screen" class="fixed inset-0 bg-slate-50 z-50 flex flex-col items-center justify-center">
     <div class="w-20 h-20 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
     <p class="text-2xl font-bold text-blue-600 mt-6 animate-pulse">Carregando a Pokédex e ligando à Nuvem...</p>
   </div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
   <main class="w-full max-w-[1800px] mx-auto px-6 lg:px-12 mt-10">
 
-    <!-- ABA: MEU ÁLBUM -->
     <section id="sect-album" class="animate-fade-in">
       <div class="mb-8">
         <h2 class="text-3xl xl:text-4xl font-extrabold text-slate-800">A sua Coleção</h2>
         <p class="text-slate-500 text-lg xl:text-xl mt-2">Explore os Pokémons coletados e veja quais figurinhas ainda faltam ou estão repetidas. Clique nelas para ver detalhes!</p>
       </div>
       <div id="album-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-6 lg:gap-8">
-        <!-- Gerado via JavaScript -->
-      </div>
+        </div>
     </section>
 
-    <!-- ABA: ABRIR PACOTES -->
     <section id="sect-packs" class="hidden animate-fade-in flex flex-col items-center justify-center py-12">
       <div class="bg-white p-12 rounded-3xl shadow-xl max-w-xl w-full text-center border-4 border-blue-50/50">
         <img 
@@ -122,17 +111,14 @@
         </div>
         
         <div id="pack-action-container">
-          <!-- Botão gerado dinamicamente dependendo do timer -->
-        </div>
+          </div>
       </div>
 
-      <!-- Modal de Exibição das Figurinhas do Pacote -->
       <div id="pack-modal" class="fixed inset-0 bg-slate-950/90 z-50 hidden flex-col items-center justify-center p-6">
         <h2 class="text-3xl sm:text-5xl font-black text-white mb-12 drop-shadow-xl text-center">Incrível! Olha o que você conseguiu:</h2>
         
         <div id="pack-result-cards" class="flex flex-wrap justify-center gap-8 mb-16 max-w-[1800px]">
-          <!-- Gerado dinamicamente pelo JS -->
-        </div>
+          </div>
 
         <button 
           onclick="closePackModal()"
@@ -143,7 +129,6 @@
       </div>
     </section>
 
-    <!-- ABA: MERCADO DE TROCA -->
     <section id="sect-market" class="hidden animate-fade-in">
       <div class="mb-8">
         <h2 class="text-3xl xl:text-4xl font-extrabold text-slate-800">Mercado de Troca</h2>
@@ -152,7 +137,6 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
-        <!-- Coluna da Esquerda: Formulário de Criação -->
         <div class="bg-white p-8 lg:p-10 rounded-3xl shadow-sm border border-slate-200 lg:col-span-4 lg:sticky lg:top-36">
           <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
             <span class="w-4 h-4 rounded-full bg-blue-500"></span>
@@ -195,33 +179,26 @@
           </form>
         </div>
 
-        <!-- Coluna da Direita: Listagem de Propostas -->
         <div class="space-y-6 lg:col-span-8">
           <h3 class="text-2xl font-bold text-slate-700 mb-4">Mural de Trocas Ativas</h3>
           <div id="trades-list" class="flex flex-col gap-6">
-            <!-- Mensagem ou Lista gerada via JS -->
-          </div>
+            </div>
         </div>
 
       </div>
     </section>
 
-    <!-- MODAL DE DETALHES DO POKÉMON -->
     <div id="details-modal" class="fixed inset-0 bg-slate-950/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
       <div class="bg-white rounded-3xl overflow-hidden max-w-3xl w-full shadow-2xl relative flex flex-col md:flex-row border-4 border-slate-200 animate-bounce-in">
-        <!-- Botão de Fechar -->
         <button onclick="closeDetailsModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold p-3 rounded-full transition-all cursor-pointer z-10 shadow-sm">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
 
-        <!-- Loader do Modal -->
         <div id="details-loader" class="absolute inset-0 bg-white flex flex-col items-center justify-center z-20">
           <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           <p class="text-lg font-bold text-blue-600 mt-4">Consultando Pokédex...</p>
         </div>
 
-        <!-- Conteúdo do Card -->
-        <!-- Lado Esquerdo: Imagem e Informações Básicas -->
         <div id="details-left-pane" class="w-full md:w-1/2 flex flex-col items-center justify-center p-8 bg-gradient-to-b from-slate-50 to-slate-100 border-b md:border-b-0 md:border-r border-slate-100 relative">
           <span id="details-pokedex-id" class="absolute top-4 left-6 text-xl font-extrabold text-slate-300">#000</span>
           
@@ -230,19 +207,15 @@
           <h3 id="details-name" class="text-3xl font-black text-slate-800 tracking-wide mb-1">Pokémon</h3>
           <div id="details-rarity" class="text-xs uppercase font-extrabold tracking-widest px-3 py-1 rounded-full mb-4">Raridade</div>
 
-          <!-- Tipo Pills -->
           <div id="details-types" class="flex gap-2">
-            <!-- Gerado via JS -->
-          </div>
+            </div>
         </div>
 
-        <!-- Lado Direito: Estatísticas de Combate -->
         <div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
           <div>
             <h4 class="text-lg font-black text-slate-500 uppercase tracking-wider mb-6">Atributos Base</h4>
             
             <div class="space-y-4">
-              <!-- HP -->
               <div>
                 <div class="flex justify-between text-sm font-bold text-slate-600 mb-1">
                   <span>Pontos de Vida (HP)</span>
@@ -253,7 +226,6 @@
                 </div>
               </div>
 
-              <!-- ATAQUE -->
               <div>
                 <div class="flex justify-between text-sm font-bold text-slate-600 mb-1">
                   <span>Ataque (ATK)</span>
@@ -264,7 +236,6 @@
                 </div>
               </div>
 
-              <!-- DEFESA -->
               <div>
                 <div class="flex justify-between text-sm font-bold text-slate-600 mb-1">
                   <span>Defesa (DEF)</span>
@@ -275,7 +246,6 @@
                 </div>
               </div>
 
-              <!-- VELOCIDADE -->
               <div>
                 <div class="flex justify-between text-sm font-bold text-slate-600 mb-1">
                   <span>Velocidade (SPD)</span>
@@ -288,7 +258,6 @@
             </div>
           </div>
 
-          <!-- Dimensões adicionais (Peso e Altura) -->
           <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6 mt-6">
             <div class="text-center bg-slate-50 p-3 rounded-xl">
               <span class="block text-xs font-bold text-slate-400 uppercase tracking-wide">Altura</span>
@@ -305,7 +274,6 @@
 
   </main>
 
-  <!-- FIREBASE CONFIG E SCRIPTS (CDNs do Firebase v10) -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getFirestore, collection, doc, setDoc, getDoc, addDoc, deleteDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -431,42 +399,45 @@
 
     // --- INICIALIZAR BANCO DE DADOS ---
     const initAppDatabase = async () => {
-      let config = null;
       
+      // ⚠️ COLE AQUI AS CREDENCIAIS DO SEU PROJETO FIREBASE ⚠️
+      const firebaseConfig = {
+        apiKey: "COLE_SUA_API_KEY_AQUI",
+        authDomain: "COLE_SEU_AUTH_DOMAIN_AQUI.firebaseapp.com",
+        projectId: "COLE_SEU_PROJECT_ID_AQUI",
+        storageBucket: "COLE_SEU_STORAGE_BUCKET_AQUI.appspot.com",
+        messagingSenderId: "COLE_SEU_SENDER_ID_AQUI",
+        appId: "COLE_SEU_APP_ID_AQUI"
+      };
+
+      // Mantemos este ID para organizar a estrutura dentro do seu banco de dados
+      appId = 'pokemon-sticker-album'; 
+
       try {
-        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
-          config = JSON.parse(__firebase_config);
-          appId = typeof __app_id !== 'undefined' ? __app_id : 'pokemon-sticker-album';
-        }
-      } catch (e) {
-        console.warn("Utilizando armazenamento local do navegador.");
-      }
+        // Inicializa o Firebase com as suas credenciais
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
 
-      if (config) {
-        try {
-          const app = initializeApp(config);
-          auth = getAuth(app);
-          db = getFirestore(app);
+        // Faz o login anônimo automático do jogador
+        await signInAnonymously(auth);
 
-          if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-            await signInWithCustomToken(auth, __initial_auth_token);
-          } else {
-            await signInAnonymously(auth);
+        // Monitora o status do jogador
+        onAuthStateChanged(auth, (currentUser) => {
+          if (currentUser) {
+            user = currentUser;
+            isOfflineMode = false; // Força o modo online
+            
+            // Atualiza a UI do topo com o ID do usuário
+            document.getElementById('trainer-badge').classList.remove('hidden');
+            document.getElementById('trainer-badge').innerHTML = `Treinador: <strong class="text-white">#${user.uid.slice(0, 5)}</strong>`;
+            
+            // Inicia a escuta de dados na nuvem e das trocas
+            listenToCloudData();
           }
-
-          onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-              user = currentUser;
-              document.getElementById('trainer-badge').classList.remove('hidden');
-              document.getElementById('trainer-badge').innerHTML = `Treinador: <strong class="text-white">#${user.uid.slice(0, 5)}</strong>`;
-              listenToCloudData();
-            }
-          });
-        } catch (err) {
-          console.error("Falha ao ligar ao Firebase. Carregando em Modo Local offline.", err);
-          setupOfflineMode();
-        }
-      } else {
+        });
+      } catch (err) {
+        console.error("Falha ao ligar ao Firebase. Verifique suas credenciais. Carregando offline...", err);
         setupOfflineMode();
       }
     };
@@ -1020,7 +991,6 @@
 
         item.innerHTML = `
           <div class="flex-1 flex flex-col sm:flex-row items-center gap-6 w-full">
-            <!-- Oferece -->
             <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl w-full sm:w-40 border border-slate-100 relative">
               <span class="absolute top-2 left-3 text-[10px] uppercase font-extrabold tracking-wide text-slate-400">Oferece</span>
               <img src="${trade.offeredSprite}" class="w-16 h-16 object-contain mt-2" />
@@ -1028,13 +998,11 @@
               <span class="text-[9px] uppercase font-bold mt-1 px-2 py-0.5 rounded ${RARITY_BADGES[trade.offeredRarity]}">${RARITY_NAMES[trade.offeredRarity]}</span>
             </div>
 
-            <!-- Divisor / Seta -->
             <div class="flex flex-col items-center">
               <span class="text-3xl text-slate-300">🔄</span>
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">${trade.ownerName}</span>
             </div>
 
-            <!-- Deseja -->
             <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl w-full sm:w-40 border border-slate-100 relative">
               <span class="absolute top-2 left-3 text-[10px] uppercase font-extrabold tracking-wide text-slate-400 font-bold">Deseja</span>
               <img src="${trade.requestedSprite}" class="w-16 h-16 object-contain mt-2" />
